@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TwTNews_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <button width="1" alignment="left" title="新闻" id="Ugd-P5-bgB">
+                            <connections>
+                                <segue destination="eQK-Po-5B4" kind="push" id="jrT-N5-Qyk"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--News Interface Controller-->
+        <scene sceneID="bnp-3D-Gis">
+            <objects>
+                <controller id="eQK-Po-5B4" customClass="NewsInterfaceController" customModule="TwTNews_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="上一页" id="mBY-FA-HqH">
+                            <connections>
+                                <action selector="prevClicked" destination="eQK-Po-5B4" id="gCM-qZ-BVj"/>
+                            </connections>
+                        </button>
+                        <table alignment="left" id="Qfr-Yr-1Td">
+                            <items>
+                                <tableRow identifier="TableController" id="nOe-UG-wmG" customClass="rowController" customModule="TwTNews_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="67" alignment="left" id="3Ty-kC-noW">
+                                        <items>
+                                            <label width="120" height="64" alignment="left" text="加载中..." textAlignment="left" numberOfLines="0" id="DFm-FM-i8R">
+                                                <fontDescription key="font" type="system" pointSize="13"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="titleLabel" destination="DFm-FM-i8R" id="nLx-Ve-YmA"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <button width="1" alignment="left" title="下一页" id="jW0-9c-bhr">
+                            <connections>
+                                <action selector="nextClicked" destination="eQK-Po-5B4" id="kIk-P6-Y6c"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="nextBtn" destination="jW0-9c-bhr" id="hh4-7d-c8R"/>
+                        <outlet property="prevBtn" destination="mBY-FA-HqH" id="hec-Fi-OCS"/>
+                        <outlet property="table" destination="Qfr-Yr-1Td" id="HiF-rL-NtC"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="345"/>
+        </scene>
+        <!--NewsDetailController-->
+        <scene sceneID="1y4-Za-ahp">
+            <objects>
+                <controller identifier="NewsDetailController" id="Haj-H5-WGE" customClass="NewsDetailController" customModule="TwTNews_WatchKit_Extension">
+                    <items>
+                        <imageView width="130" height="300" alignment="left" id="PPe-YN-3mx"/>
+                    </items>
+                    <connections>
+                        <outlet property="imgView" destination="PPe-YN-3mx" id="UoE-rY-A8M"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="717" y="345"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="TwTNews_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
