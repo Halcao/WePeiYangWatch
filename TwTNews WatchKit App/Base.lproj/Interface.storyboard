@@ -19,6 +19,11 @@
                                 <segue destination="eQK-Po-5B4" kind="push" id="jrT-N5-Qyk"/>
                             </connections>
                         </button>
+                        <button width="1" alignment="left" title="GPA" id="t4K-dn-SSz">
+                            <connections>
+                                <segue destination="Xke-LD-Ets" kind="push" id="W3a-Q6-r04"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>
@@ -79,7 +84,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="468" y="345"/>
+            <point key="canvasLocation" x="468" y="-67"/>
         </scene>
         <!--NewsDetailController-->
         <scene sceneID="1y4-Za-ahp">
@@ -94,6 +99,23 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="717" y="345"/>
+        </scene>
+        <!--Controller-->
+        <scene sceneID="uas-XD-9Ob">
+            <objects>
+                <controller id="Xke-LD-Ets" customClass="GPAController" customModule="TwTNews_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="DhU-5K-Nzh">
+                            <items>
+                                <tableRow id="SFv-y3-epF">
+                                    <group key="rootItem" width="1" alignment="left" id="6P7-2k-joQ"/>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="474" y="334"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
