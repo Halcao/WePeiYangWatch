@@ -1,5 +1,5 @@
 //
-//  GPAController.swift
+//  GPATableController.swift
 //  TwTNews
 //
 //  Created by Halcao on 2017/1/26.
@@ -10,7 +10,7 @@ import WatchKit
 import Foundation
 
 
-class GPAController: WKInterfaceController {
+class GPATableController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
